@@ -16,18 +16,22 @@ void moveArm(int pos)
     case STANDARD:
       base.write(90);
       shoulder.write(135);
+      elbow.write(120);
       break;
     case READING:
       base.write(90);
-      shoulder.write(40);
+      shoulder.write(70);
+      elbow.write(90);
       break;
     case STORED:
       base.write(90);
-      shoulder.write(135);
+      shoulder.write(180);
+      elbow.write(0);
       break;
     case VERTICAL:
       base.write(90);
       shoulder.write(180);
+      elbow.write(90);
       break;  
     default:
       break;
@@ -48,17 +52,6 @@ void setup()
 
 void loop()
 {
-//  for(pos = 0; pos < 180; pos += 1)  // goes from 0 degrees to 180 degrees 
-//  {                                  // in steps of 1 degree 
-//    wrist.write(pos);              // tell servo to go to position in variable 'pos' 
-//    delay(15);                       // waits 15ms for the servo to reach the position 
-//  } 
-//  for(pos = 180; pos>=1; pos-=1)     // goes from 180 degrees to 0 degrees 
-//  {                                
-//    wrist.write(pos);              // tell servo to go to position in variable 'pos' 
-//    delay(15);                       // waits 15ms for the servo to reach the position 
-//  } 
-  
   if (Serial.available() > 0)
   {
     incomingByte = Serial.read();
