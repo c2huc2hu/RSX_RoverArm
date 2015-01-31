@@ -1,0 +1,3 @@
+Things that we need to do next week
+
+[ ] See if we can sync servos, i.e. use two to control the same joint for more power
