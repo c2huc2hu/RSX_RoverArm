@@ -5,9 +5,7 @@ Servo wrist, elbow, shoulder, base; // Servo motors
 int wristPotVal, elbowPotVal, shoulderPotVal, basePotVal;  
 
 void setup()
-{
-  currentPosition = NULL;  
-  
+{ 
   // attach the servos to ports
   elbow.attach(24);
   wrist.attach(26);
@@ -15,10 +13,10 @@ void setup()
   base.attach(30);
   
   // Initialize the ids of the servo ports
-  wristPot = A0;
+/*  wristPot = A0;
   elbowPot = A1;
   shoulderPot = A2;
-  basePot = A3;  
+  basePot = A3;  */
   
   /* Set the potentiometers to input
   pinMode(wristPot, INPUT);
