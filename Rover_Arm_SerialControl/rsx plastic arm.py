@@ -69,4 +69,4 @@ while(True):
             joints[i] = 175
     
     ser.write(str(to_bytearray(joints)))
-    print(str(to_bytearray(joints)))
+    print(list(to_bytearray(joints)))
