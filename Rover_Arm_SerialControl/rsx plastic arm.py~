@@ -52,7 +52,7 @@ def to_bytearray(arr):
 
 # Main loop
 while(True):
-    clock.tick(60)
+    pygame.clock.tick(60)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             quit()
