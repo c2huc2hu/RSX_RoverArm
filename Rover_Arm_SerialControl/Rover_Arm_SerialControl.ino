@@ -11,7 +11,7 @@ void setup()
 //  wrist.attach(1);
   shoulder.attach(11);
   shoulder2.attach(10); 
-//  base.attach(10);
+  base.attach(9);
   
   // Initialize the ids of the servo ports
 /*  wristPot = A0;

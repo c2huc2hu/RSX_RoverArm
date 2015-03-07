@@ -1,6 +1,8 @@
 import serial, time
 import pygame
 
+SHOULDER_OFFSET = 222
+
 # INITIALIZE SERIAL PORT
 for i in range(10):
     try:
@@ -38,7 +40,7 @@ preset_positions = {STANDARD : bytearray([255, 120, 135, 90]),
                     # 255 means "ignore me"
 
 
-joints = [90, 120, 60, 90]  # set initial angles of each of the joints
+joints = [90, 120, 220-120, 130]  # set initial angles of each of the joints
 # elbow, shoulder 1, shoulder 2, base
 
 def to_bytearray(arr):
@@ -79,8 +81,9 @@ while(True):
             joints[i] = 5
         if 175 < joints[i]:
             joints[i] = 175
+#    joints[2] = 0
+    joints[2] = SHOULDER_OFFSET - joints[1]
     
-    joints[2] = 180 - joints[1]
     if changed:
         ser.write(str(to_bytearray(joints)))
     print(list(to_bytearray(joints)))
